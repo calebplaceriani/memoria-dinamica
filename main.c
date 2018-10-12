@@ -92,16 +92,10 @@ int array_liberar(int* array)
 int* array_redimencionar(int* array,int nuevo_len)
 {
     int* retorno=-1;
-    int* auxA;
 
     if(array!=NULL && nuevo_len>0)
     {
-        auxA=(int*)realloc(array,sizeof(int)*nuevo_len);
-        if(auxA!=NULL)
-        {
-            array=auxA;
-            retorno=array;
-        }
+        retorno=(int*)realloc(array,sizeof(int)*nuevo_len);
     }
 
     return retorno;
